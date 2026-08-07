@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PosterPlaceholder } from './Placeholder';
 import './SocialMedia.scss';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +12,7 @@ export const SocialMedia = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Left Description fade upward
+      // Left Info entrance
       gsap.fromTo(
         leftColRef.current,
         { opacity: 0, y: 70 },
@@ -29,10 +28,10 @@ export const SocialMedia = () => {
         }
       );
 
-      // Poster scale 0.9 -> 1 & opacity reveal
+      // Poster scale & reveal
       gsap.fromTo(
         posterRef.current,
-        { opacity: 0, scale: 0.9 },
+        { opacity: 0, scale: 0.92 },
         {
           opacity: 1,
           scale: 1,
@@ -52,37 +51,28 @@ export const SocialMedia = () => {
   return (
     <section className="social-media-section" ref={sectionRef} id="social">
       <div className="portfolio-container social-grid">
-        {/* Left Column: Editorial Brief */}
+        {/* Left Column: Project Details */}
         <div className="social-left" ref={leftColRef}>
-          <span className="section-label">CAMPAIGN & POSTER ART</span>
-          <h2 className="social-title">SWISS MINIMALIST POSTER COLLECTION</h2>
+          <span className="social-subhead">Portfolio - Matte painting</span>
+          
+          <h2 className="social-title">Hard-Surface Modeling</h2>
           
           <p className="social-desc">
-            A curated series of high-contrast typography posters and social brand identity campaigns. Focusing on brutalist layouts, bold grid architecture, and vibrant green accents designed to dominate digital feeds and billboard spaces.
+            This project is a clean hard-surface exploration inspired by the design philosophy of Nothing's transparent aesthetic. I rebuilt the entire headset from scratch in Blender, focusing on accurate panel separation, clean bevels, and readable surface transitions. The earcups are built from controlled subdivision surfaces with support loops to keep the silhouette tight, and the hinge system uses simple mechanical geometry to stay believable while still stylized. The inner joints and connectors were modeled as functional parts—no lazy boolean shortcuts—so the edges hold up even under close-up renders
           </p>
 
-          <div className="campaign-metrics">
-            <div className="metric-box">
-              <span className="metric-num">500K+</span>
-              <span className="metric-label">Social Impressions</span>
-            </div>
-            <div className="metric-box">
-              <span className="metric-num">12</span>
-              <span className="metric-label">Global Exhibitions</span>
-            </div>
-          </div>
+          <p className="social-date">Date : 2026</p>
         </div>
 
-        {/* Right Column: Poster Placeholder */}
+        {/* Right Column: Poster Image */}
         <div className="social-right" ref={posterRef}>
           <div className="poster-wrapper image-zoom-container">
-            {/* REPLACE WITH: <img src="/assets/poster-artwork.jpg" alt="Poster Artwork" /> */}
-            <PosterPlaceholder label="Poster Artwork" />
+            <img src="/assets/poster.png" alt="Perspective Poster Artwork" />
           </div>
         </div>
       </div>
 
-      {/* Large Whitespace Below as requested */}
+      {/* Spacing Block */}
       <div className="large-whitespace-block" />
     </section>
   );

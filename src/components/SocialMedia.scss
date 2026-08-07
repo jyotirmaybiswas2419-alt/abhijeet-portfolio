@@ -1,83 +1,98 @@
 .social-media-section {
-  padding: 120px 32px 0 32px;
+  padding: 140px 32px 0 32px;
   background-color: var(--color-bg);
   position: relative;
 }
 
 .social-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
   align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .social-left {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
+  gap: 18px;
+  max-width: 580px;
 
-.social-title {
-  font-size: clamp(3rem, 5.5vw, 4.8rem);
-  color: var(--color-navy);
-  line-height: 0.95;
-}
+  .social-subhead {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #1E293B;
+    letter-spacing: -0.01em;
+  }
 
-.social-desc {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #334155;
-}
+  .social-title {
+    font-family: 'Druk Cond Trial', 'Druk Trial', var(--font-heading);
+    font-weight: 900;
+    font-size: clamp(3.8rem, 6.5vw, 5.5rem);
+    color: var(--color-navy);
+    line-height: 0.9;
+    margin: 4px 0 10px 0;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
 
-.campaign-metrics {
-  display: flex;
-  gap: 40px;
-  margin-top: 16px;
-  border-top: 1px solid var(--color-border);
-  padding-top: 24px;
-}
+  .social-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #27272A;
+    font-weight: 500;
+  }
 
-.metric-num {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  color: var(--color-green);
-  line-height: 1;
-  display: block;
-}
-
-.metric-label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-navy);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  .social-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    margin-top: 10px;
+  }
 }
 
 .social-right {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .poster-wrapper {
   width: 100%;
-  max-width: 440px;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(7, 19, 38, 0.12);
+  max-width: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+  }
 }
 
 .large-whitespace-block {
-  height: 180px;
+  height: 140px;
   width: 100%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
   .social-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
+  }
+
+  .social-left {
+    max-width: 100%;
   }
 
   .poster-wrapper {
-    max-width: 480px;
+    max-width: 100%;
   }
 }
 
@@ -87,6 +102,6 @@
   }
 
   .large-whitespace-block {
-    height: 100px;
+    height: 80px;
   }
 }

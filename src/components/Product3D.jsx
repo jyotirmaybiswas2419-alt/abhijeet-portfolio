@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ProjectPlaceholder } from './Placeholder';
 import './Product3D.scss';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,15 +8,14 @@ gsap.registerPlugin(ScrollTrigger);
 export const Product3D = () => {
   const sectionRef = useRef(null);
   const row1Ref = useRef(null);
-  const row1RendersRef = useRef(null);
   const row2Ref = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Row 1 Text Reveal
+      // Row 1 Reveal
       gsap.fromTo(
         row1Ref.current,
-        { opacity: 0, y: 80 },
+        { opacity: 0, y: 70 },
         {
           opacity: 1,
           y: 0,
@@ -25,33 +23,15 @@ export const Product3D = () => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: row1Ref.current,
-            start: 'top 80%',
-          },
-        }
-      );
-
-      // Row 1 - Three 3D Render Placeholders Stagger Reveal
-      gsap.fromTo(
-        row1RendersRef.current.children,
-        { opacity: 0, y: 60, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.0,
-          stagger: 0.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: row1RendersRef.current,
             start: 'top 75%',
           },
         }
       );
 
-      // Row 2 Large Product Render Reveal
+      // Row 2 Reveal
       gsap.fromTo(
         row2Ref.current,
-        { opacity: 0, y: 80 },
+        { opacity: 0, y: 70 },
         {
           opacity: 1,
           y: 0,
@@ -70,55 +50,60 @@ export const Product3D = () => {
 
   return (
     <section className="product3d-section" ref={sectionRef} id="product3d">
-      <div className="portfolio-container">
+      <div className="portfolio-container product3d-container">
         
-        {/* Project 1: Description on Left, 3 Render Grid on Right */}
-        <div className="product-row product-row--one">
-          <div className="product-info-col" ref={row1Ref}>
-            <span className="project-category-tag">3D INDUSTRIAL & CONCEPT DESIGN</span>
-            <h2 className="project-heading">CHRONO LUXURY SMARTWATCH & WEARABLES</h2>
-            <p className="project-body">
-              A high-precision 3D visualization project highlighting tactile metal textures, curved sapphire crystal reflections, and ergonomic industrial design. Rendered in Octane & Cinema 4D.
+        {/* Project 1: Mechanical Keyboard */}
+        <div className="product-block-row" ref={row1Ref}>
+          {/* Left: Project Details */}
+          <div className="product-info-col">
+            <span className="product-subhead">Portfolio - Product Visualization</span>
+            <h2 className="product-title">Mechanical Keyboard Product Visualization</h2>
+            <p className="product-desc">
+              A realistic 65% mechanical keyboard created in Blender as a product visualization study. The focus of this project was achieving accurate proportions, believable materials, and clean studio lighting. Each keycap was modeled with consistent spacing and alignment to replicate a real-world mechanical keyboard layout.
             </p>
-            <div className="project-specs">
-              <span>SOFTWARE: Cinema 4D, Octane, ZBrush</span>
-              <span>YEAR: 2026</span>
-            </div>
+            <p className="product-date">Date : 2026</p>
           </div>
 
-          <div className="product-renders-grid" ref={row1RendersRef}>
-            <div className="render-card image-zoom-container">
-              {/* REPLACE WITH: <img src="/assets/3d-render-1.jpg" alt="3D Render Front View" /> */}
-              <ProjectPlaceholder label="3D Render 1 (Front)" aspectRatio="4/3" bgColor="#D9D9D9" />
+          {/* Right: 3 Render Showcase (Top Hero + 2 Bottom Grid) */}
+          <div className="product-renders-col product-renders-col--keyboard">
+            <div className="render-hero-card image-zoom-container">
+              <img src="/assets/3d/keynoard (1).png" alt="Mechanical Keyboard Full View" />
             </div>
-            <div className="render-card image-zoom-container">
-              {/* REPLACE WITH: <img src="/assets/3d-render-2.jpg" alt="3D Render Side Detail" /> */}
-              <ProjectPlaceholder label="3D Render 2 (Detail)" aspectRatio="4/3" bgColor="#CFCFCF" />
-            </div>
-            <div className="render-card image-zoom-container">
-              {/* REPLACE WITH: <img src="/assets/3d-render-3.jpg" alt="3D Render Explosion View" /> */}
-              <ProjectPlaceholder label="3D Render 3 (Exploded)" aspectRatio="4/3" bgColor="#BDBDBD" />
+            <div className="renders-bottom-grid">
+              <div className="render-sub-card image-zoom-container">
+                <img src="/assets/3d/keynoard (2).png" alt="Keyboard Keycap Detail Left" />
+              </div>
+              <div className="render-sub-card image-zoom-container">
+                <img src="/assets/3d/keynoard (3).png" alt="Keyboard Keycap Detail Right" />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Project 2 Underneath: Large Product Placeholder Left/Main, Description Beside */}
-        <div className="product-row product-row--two" ref={row2Ref}>
-          <div className="large-render-col image-zoom-container">
-            {/* REPLACE WITH: <img src="/assets/3d-render-hero.jpg" alt="3D Hero Render Product" /> */}
-            <ProjectPlaceholder label="Large 3D Product Render" aspectRatio="16/9" bgColor="#AFAFAF" />
+        {/* Project 2: Hard-Surface Modeling (Headphones) */}
+        <div className="product-block-row" ref={row2Ref}>
+          {/* Left: Project Details */}
+          <div className="product-info-col">
+            <span className="product-subhead">Portfolio - Product Visualization</span>
+            <h2 className="product-title">Hard-Surface Modeling</h2>
+            <p className="product-desc">
+              This project is a clean hard-surface exploration inspired by the design philosophy of Nothing's transparent aesthetic. I rebuilt the entire headset from scratch in Blender, focusing on accurate panel separation, clean bevels, and readable surface transitions. The earcups are built from controlled subdivision surfaces with support loops to keep the silhouette tight, and the hinge system uses simple mechanical geometry to stay believable while still stylized. The inner joints and connectors were modeled as functional parts—no lazy boolean shortcuts—so the edges hold up even under close-up renders
+            </p>
+            <p className="product-date">Date : 2026</p>
           </div>
 
-          <div className="product-side-info">
-            <span className="project-category-tag">KEYSHOT & BLENDER VISUALIZATION</span>
-            <h3 className="project-subheading">AURA ERGONOMIC AUDIO HEADPHONES</h3>
-            <p className="project-body">
-              Exploration of acoustic architecture, acoustic foam dampening, and titanium hinge mechanics. Photorealistic materials tuned with sub-surface scattering and ambient studio lighting.
-            </p>
-            <div className="spec-badge-group">
-              <span className="spec-badge">Photorealistic Lighting</span>
-              <span className="spec-badge">Sub-Surface Material</span>
-              <span className="spec-badge">4K Studio Renders</span>
+          {/* Right: 3 Render Showcase (Top Hero + 2 Bottom Grid) */}
+          <div className="product-renders-col product-renders-col--headphone">
+            <div className="render-hero-card image-zoom-container">
+              <img src="/assets/3d/headphone (1).png" alt="Headphones Full View" />
+            </div>
+            <div className="renders-bottom-grid">
+              <div className="render-sub-card image-zoom-container">
+                <img src="/assets/3d/headphone (2).png" alt="Headphone Detail Left" />
+              </div>
+              <div className="render-sub-card image-zoom-container">
+                <img src="/assets/3d/headphone (3).png" alt="Headphone Detail Right" />
+              </div>
             </div>
           </div>
         </div>

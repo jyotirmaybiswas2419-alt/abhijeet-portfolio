@@ -1,14 +1,17 @@
 .uiux-section {
-  padding: 100px 32px 60px 32px;
+  padding: 160px 32px 100px 32px;
   background-color: var(--color-bg);
   position: relative;
+  min-height: 90vh;
 }
 
 .uiux-grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.35fr;
+  grid-template-columns: 0.6fr 1.6fr;
   gap: 50px;
   align-items: start;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .uiux-left {
@@ -81,7 +84,7 @@
     padding: 24px 36px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 
     .echon-logo-text {
@@ -93,6 +96,7 @@
       -webkit-text-fill-color: transparent;
       line-height: 0.85;
       letter-spacing: 0.05em;
+      text-align: center;
     }
   }
 
@@ -119,7 +123,7 @@
 
 .uiux-main-content {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr 220px;
   gap: 20px;
   align-items: stretch;
 }
@@ -127,7 +131,7 @@
 .app-screens-container {
   background: #1E1E28;
   border-radius: 36px;
-  padding: 24px;
+  padding: 30px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -135,7 +139,7 @@
   .screens-inner-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 20px;
     width: 100%;
   }
 

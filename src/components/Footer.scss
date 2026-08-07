@@ -32,6 +32,7 @@
     line-height: 0.9;
     letter-spacing: 0.03em;
     max-width: 1000px;
+    color: var(--color-white);
   }
 
   .contact-email-btn {
@@ -39,18 +40,18 @@
     background: var(--color-green);
     color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 3vw, 2.4rem);
-    letter-spacing: 0.1em;
-    padding: 18px 40px;
+    font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+    letter-spacing: 0.08em;
+    padding: 18px 44px;
     border-radius: 100px;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 30px rgba(67, 179, 106, 0.3);
+    box-shadow: 0 10px 30px rgba(67, 179, 106, 0.35);
 
     &:hover {
       transform: translateY(-4px) scale(1.02);
       background-color: #349656;
-      box-shadow: 0 16px 40px rgba(67, 179, 106, 0.45);
+      box-shadow: 0 16px 40px rgba(67, 179, 106, 0.5);
     }
   }
 }
@@ -59,28 +60,35 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 60px;
 }
 
 .footer-col-head {
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
   color: var(--color-green);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.location-text {
+  color: #E2E8F0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .social-links, .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 
   a {
-    color: rgba(255, 255, 255, 0.75);
+    color: #CBD5E1;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-weight: 500;
     transition: color 0.2s ease, transform 0.2s ease;
 
@@ -95,20 +103,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 30px;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  color: #94A3B8;
+
+  .copyright-text {
+    color: #94A3B8;
+    font-weight: 500;
+  }
 
   .back-to-top-btn {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: var(--color-white);
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 100px;
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.3s ease;
 

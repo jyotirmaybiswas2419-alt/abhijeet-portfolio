@@ -1,117 +1,126 @@
 .product3d-section {
-  padding: 120px 32px;
+  padding: 140px 32px;
   background-color: var(--color-bg);
   position: relative;
 }
 
-.product-row {
-  display: grid;
-  gap: 60px;
-  margin-bottom: 100px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &--one {
-    grid-template-columns: 1fr 1.3fr;
-    align-items: center;
-  }
-
-  &--two {
-    grid-template-columns: 1.4fr 1fr;
-    align-items: center;
-  }
-}
-
-.project-category-tag {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  color: var(--color-green);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.project-heading {
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  color: var(--color-navy);
-  line-height: 0.95;
-  margin-bottom: 20px;
-}
-
-.project-subheading {
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  color: var(--color-navy);
-  line-height: 0.95;
-  margin-bottom: 16px;
-}
-
-.project-body {
-  font-size: 1.1rem;
-  line-height: 1.65;
-  color: #334155;
-  margin-bottom: 24px;
-}
-
-.project-specs {
+.product3d-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: #64748B;
-  letter-spacing: 0.05em;
+  gap: 160px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.product-renders-grid {
+.product-block-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+  align-items: start;
 }
 
-.render-card {
-  border-radius: 16px;
-  box-shadow: 0 16px 36px rgba(7, 19, 38, 0.08);
-}
-
-.large-render-col {
-  border-radius: 20px;
-  box-shadow: 0 24px 48px rgba(7, 19, 38, 0.1);
-}
-
-.product-side-info {
+.product-info-col {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 18px;
+  max-width: 580px;
+
+  .product-subhead {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #1E293B;
+    letter-spacing: -0.01em;
+  }
+
+  .product-title {
+    font-family: 'Druk Cond Trial', 'Druk Trial', var(--font-heading);
+    font-weight: 900;
+    font-size: clamp(3.8rem, 6.5vw, 5.5rem);
+    color: var(--color-navy);
+    line-height: 0.9;
+    margin: 4px 0 10px 0;
+    letter-spacing: 0.02em;
+    text-transform: none; /* Sentence/Title case as shown in reference */
+  }
+
+  .product-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #27272A;
+    font-weight: 500;
+  }
+
+  .product-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    margin-top: 10px;
+  }
 }
 
-.spec-badge-group {
+.product-renders-col {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 16px;
+
+  &--keyboard, &--headphone {
+    max-width: 90%;
+    
+    .render-hero-card img {
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .render-sub-card img {
+      max-height: 250px;
+      object-fit: cover;
+    }
+  }
 }
 
-.spec-badge {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  padding: 6px 14px;
-  border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-navy);
+.render-hero-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
 }
 
-@media (max-width: 992px) {
-  .product-row--one, .product-row--two {
+.renders-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.render-sub-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+@media (max-width: 1100px) {
+  .product-block-row {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .product-renders-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .product3d-container {
+    gap: 100px;
   }
 }
 
@@ -120,7 +129,7 @@
     padding: 80px 20px;
   }
 
-  .product-renders-grid {
+  .renders-bottom-grid {
     grid-template-columns: 1fr;
   }
 }

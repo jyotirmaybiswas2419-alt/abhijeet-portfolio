@@ -31,8 +31,8 @@
   z-index: 2;
   font-family: 'Druk Cond Trial', 'Druk Trial', var(--font-heading);
   font-weight: 900;
-  font-size: clamp(7.5rem, 25vw, 22rem);
-  line-height: 0.8;
+  font-size: clamp(6rem, 18vw, 17rem);
+  line-height: 0.9;
   letter-spacing: 0.03em;
   color: var(--color-white);
   text-align: center;
@@ -42,6 +42,7 @@
   align-items: center;
   margin: 0;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .banner-title-line {
@@ -52,10 +53,10 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1050px;
+  max-width: 1100px;
   height: 6px;
   background-color: var(--color-navy);
-  margin-top: 80px;
+  margin-top: 130px;
   border-radius: 3px;
   transform-origin: center;
 }

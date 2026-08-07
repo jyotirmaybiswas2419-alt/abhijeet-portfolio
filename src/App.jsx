@@ -34,8 +34,8 @@ export function App() {
 
       {/* 5. UI/UX Section Banner & Showcase */}
       <SectionBanner
-        titleLine1="UI - UX"
-        titleLine2="DESIGN"
+        titleLine1="UI - UX DESIGN"
+        titleLine2=""
         bgImage="/assets/ui ux folio.png"
         showUnderline={true}
         id="uiux-banner"
@@ -47,8 +47,8 @@ export function App() {
 
       {/* 7. 3D Product Section Banner & Showcase */}
       <SectionBanner
-        titleLine1="3D"
-        titleLine2="PRODUCT"
+        titleLine1="3D PRODUCT"
+        titleLine2=""
         bgImage="/assets/ui ux folio.png"
         showUnderline={true}
         id="product3d-banner"
@@ -60,8 +60,8 @@ export function App() {
 
       {/* 9. Social Media Section Banner & Showcase */}
       <SectionBanner
-        titleLine1="SOCIAL"
-        titleLine2="MEDIA"
+        titleLine1="SOCIAL MEDIA"
+        titleLine2=""
         bgImage="/assets/ui ux folio.png"
         showUnderline={true}
         id="social-banner"
