@@ -1,0 +1,59 @@
+.placeholder-box {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.04);
+}
+
+.placeholder-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(7, 19, 38, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.placeholder-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+}
+
+.placeholder-sublabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #64748B;
+}
+
+.phone-mockup-frame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 12px;
+  background: var(--color-navy);
+  border-radius: 44px;
+  box-shadow: 0 25px 50px -12px rgba(7, 19, 38, 0.25);
+  
+  .phone-notch {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 18px;
+    background: #000;
+    border-radius: 10px;
+    z-index: 10;
+  }
+}

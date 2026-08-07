@@ -1,0 +1,173 @@
+:root {
+  --color-bg: #F8F0E6;
+  --color-green: #43B36A;
+  --color-navy: #071326;
+  --color-white: #FFFFFF;
+  --color-muted-text: #5A6578;
+  --color-border: rgba(7, 19, 38, 0.12);
+
+  --font-heading: 'Druk Trial', 'Druk Cond Trial', 'Druk Wide Trial', 'Bebas Neue', 'Anton', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --placeholder-color-1: #D9D9D9;
+  --placeholder-color-2: #CFCFCF;
+  --placeholder-color-3: #BDBDBD;
+  --placeholder-color-4: #AFAFAF;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-navy);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: initial;
+}
+
+/* Lenis Recommended Smooth Scroll CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+/* Main Container & Presentation Layout */
+.portfolio-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Marquee Animation */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Floating Animation for Hero Circles */
+@keyframes floatSlowLeft {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+
+@keyframes floatSlowRight {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(30px) rotate(-4deg);
+  }
+}
+
+.floating-circle-left {
+  animation: floatSlowLeft 7s ease-in-out infinite;
+}
+
+.floating-circle-right {
+  animation: floatSlowRight 8.5s ease-in-out infinite;
+}
+
+/* Micro-interaction hover cards */
+.interactive-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(7, 19, 38, 0.08);
+}
+
+/* Base image hover effect for inner containers */
+.image-zoom-container {
+  overflow: hidden;
+}
+
+.image-zoom-container .placeholder-box {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom-container:hover .placeholder-box {
+  transform: scale(1.03);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(7, 19, 38, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green);
+}

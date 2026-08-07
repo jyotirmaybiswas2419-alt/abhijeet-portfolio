@@ -1,0 +1,92 @@
+.social-media-section {
+  padding: 120px 32px 0 32px;
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.social-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.social-title {
+  font-size: clamp(3rem, 5.5vw, 4.8rem);
+  color: var(--color-navy);
+  line-height: 0.95;
+}
+
+.social-desc {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.campaign-metrics {
+  display: flex;
+  gap: 40px;
+  margin-top: 16px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+}
+
+.metric-num {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-green);
+  line-height: 1;
+  display: block;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.social-right {
+  display: flex;
+  justify-content: center;
+}
+
+.poster-wrapper {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(7, 19, 38, 0.12);
+}
+
+.large-whitespace-block {
+  height: 180px;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .poster-wrapper {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .social-media-section {
+    padding: 80px 20px 0 20px;
+  }
+
+  .large-whitespace-block {
+    height: 100px;
+  }
+}

@@ -1,0 +1,243 @@
+.uiux-section {
+  padding: 100px 32px 60px 32px;
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+.uiux-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.uiux-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uiux-subhead {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #1E293B;
+  letter-spacing: -0.01em;
+}
+
+.echon-title {
+  font-family: 'Druk Cond Trial', 'Druk Trial', var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(4rem, 7vw, 6rem);
+  color: var(--color-navy);
+  line-height: 0.85;
+  margin: 4px 0 12px 0;
+  letter-spacing: 0.02em;
+}
+
+.echon-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #27272A;
+  font-weight: 500;
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #27272A;
+  }
+
+  .sub-detail {
+    color: #3F3F46;
+    line-height: 1.5;
+  }
+
+  .echon-date {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    margin-top: 8px;
+  }
+}
+
+.uiux-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.uiux-top-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .echon-header-card {
+    flex: 1;
+    background: #18181B;
+    border-radius: 28px;
+    padding: 24px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+    .echon-logo-text {
+      font-family: 'Druk Cond Trial', 'Druk Trial', var(--font-heading);
+      font-weight: 900;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      background: linear-gradient(135deg, #7C5CFF 0%, #4C35B5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 0.85;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .echon-swatch {
+    width: 80px;
+    height: 90px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+
+    &.swatch--dark {
+      background-color: #27272A;
+    }
+
+    &.swatch--purple {
+      background-color: #7C5CFF;
+    }
+
+    &.swatch--deep-purple {
+      background-color: #3C2C8C;
+    }
+  }
+}
+
+.uiux-main-content {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.app-screens-container {
+  background: #1E1E28;
+  border-radius: 36px;
+  padding: 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+
+  .screens-inner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+  }
+
+  .app-screen-item {
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
+    }
+  }
+}
+
+.components-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+
+  .component-card-item {
+    background: #18181B;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 16px;
+    }
+  }
+}
+
+.know-more-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+
+  .know-more-btn {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      color: var(--color-navy);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .uiux-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .uiux-main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .components-stack {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .uiux-section {
+    padding: 60px 20px 40px 20px;
+  }
+
+  .uiux-top-row {
+    flex-wrap: wrap;
+
+    .echon-swatch {
+      width: 60px;
+      height: 65px;
+      border-radius: 16px;
+    }
+  }
+
+  .app-screens-container .screens-inner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .components-stack {
+    grid-template-columns: 1fr;
+  }
+}
