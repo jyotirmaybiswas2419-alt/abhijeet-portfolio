@@ -126,10 +126,24 @@
 
 @media (max-width: 600px) {
   .product3d-section {
-    padding: 80px 20px;
+    padding: 60px 16px;
+  }
+
+  .product3d-container {
+    gap: 60px;
+  }
+
+  .product-info-col .product-title {
+    font-size: clamp(2.8rem, 12vw, 4.2rem);
+  }
+
+  .product-renders-col--keyboard,
+  .product-renders-col--headphone {
+    max-width: 100%;
   }
 
   .renders-bottom-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 }

@@ -63,16 +63,20 @@
 
 @media (max-width: 768px) {
   .section-banner {
-    min-height: 60vh;
-    padding: 100px 16px 70px 16px;
+    min-height: 45vh;
+    padding: 80px 16px 50px 16px;
   }
 
   .banner-title {
-    font-size: clamp(5rem, 22vw, 12rem);
+    font-size: clamp(2.8rem, 11vw, 5.2rem);
+    white-space: normal;
+    line-height: 0.95;
+    word-break: break-word;
   }
 
   .banner-bottom-underline {
-    margin-top: 50px;
+    margin-top: 40px;
     height: 4px;
+    max-width: 85%;
   }
 }

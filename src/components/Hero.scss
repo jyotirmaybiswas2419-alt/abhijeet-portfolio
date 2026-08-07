@@ -72,13 +72,36 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: 520px;
+    height: 90vh;
+  }
+
   .hero-circle--left {
-    left: -30vw;
-    top: 10vh;
+    width: 280px;
+    height: 280px;
+    left: -100px;
+    top: 20px;
+    opacity: 0.35;
   }
 
   .hero-circle--right {
-    right: -32vw;
-    bottom: 5vh;
+    width: 300px;
+    height: 300px;
+    right: -110px;
+    bottom: 20px;
+    opacity: 0.35;
+  }
+
+  .hero-subhead {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--color-navy);
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.8rem, 16vw, 6.5rem);
+    line-height: 0.85;
   }
 }

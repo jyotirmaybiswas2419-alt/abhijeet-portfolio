@@ -207,6 +207,10 @@
 }
 
 @media (max-width: 1100px) {
+  .uiux-section {
+    padding: 100px 24px 60px 24px;
+  }
+
   .uiux-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -224,24 +228,56 @@
 
 @media (max-width: 600px) {
   .uiux-section {
-    padding: 60px 20px 40px 20px;
+    padding: 60px 16px 40px 16px;
+  }
+
+  .echon-title {
+    font-size: clamp(3rem, 12vw, 4.2rem);
   }
 
   .uiux-top-row {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    .echon-header-card {
+      padding: 16px 20px;
+      border-radius: 20px;
+    }
+
+    .echon-swatches-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
 
     .echon-swatch {
-      width: 60px;
-      height: 65px;
+      flex: 1;
+      height: 60px;
       border-radius: 16px;
     }
   }
 
-  .app-screens-container .screens-inner-grid {
-    grid-template-columns: 1fr;
+  .app-screens-container {
+    padding: 14px;
+    border-radius: 24px;
+
+    .screens-inner-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .app-screen-item {
+      border-radius: 14px;
+
+      img {
+        border-radius: 14px;
+      }
+    }
   }
 
   .components-stack {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 }
